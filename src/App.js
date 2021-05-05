@@ -2,6 +2,7 @@ import incode from './assets/incode.svg';
 import './App.css';
 import {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import BiometricFace from "./componets/biometric.js";
+import TablaIdentities from "./componets/tabla_identities";
 
 function App(){
   return (
@@ -14,9 +15,12 @@ function App(){
           <Route path="/home">
             <Home/>
           </Route>
+           <Route path="/componets/tabla_identities">
+            <TablaIdentities/>
+          </Route>
         </Switch>
        </Router>
-       </div>   
+      </div>   
   
     )
 
@@ -27,18 +31,16 @@ function Home() {
     <div className="App">
       <header className="App-header">
         <img src={incode} className="Incode-logo" alt="logo" />
+        <br></br>
         <Link to="./componets/biometric"><button className="find-id">Find Identities</button></Link> 
-         <Link><button className='tabla-id'>Identites</button></Link>
-        <PurebaTxt/>
+        <br></br>
+        <Link to="./componets/tabla_identities"><button className='tabla-id'>Identites</button></Link>
+      
       </header>
       
     </div>
     
-   
   );
 }
 
-function PurebaTxt(){
-  return <h1>prueba texto</h1>
-}
 export default App;
