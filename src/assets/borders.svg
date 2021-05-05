@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="464" height="463" viewBox="0 0 464 463">
+    <defs>
+        <circle id="t65vlck7qa" cx="242.2" cy="240.535" r="213.902"/>
+        <mask id="jsdfu34vab" width="462.803" height="462.803" x="-17.5" y="-17.5" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox">
+            <path fill="#fff" d="M10.798 9.134H473.601V471.937H10.798z"/>
+            <use xlink:href="#t65vlck7qa"/>
+        </mask>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke-dasharray="4.998 8.33">
+        <g stroke="#00B2FD" stroke-width="35">
+            <g transform="translate(-488 -284) translate(478 275)">
+                <use mask="url(#jsdfu34vab)" xlink:href="#t65vlck7qa"/>
+            </g>
+        </g>
+    </g>
+</svg>
