@@ -1,4 +1,4 @@
-import "../App.css";
+import '../css/style_login.css'
 import background from '../assets/background.svg';
 import borders from '../assets/borders.svg';
 import faceframe from '../assets/faceframe.svg';
@@ -24,42 +24,46 @@ function BiometricFace(){
 
     return (
         <div>               
-            <h1>Finde Identities</h1>
-            <Backgroud/>
-            <BordersLoading/>
-            <video className="video" autoPlay ref={videoRef}/>
-            <Borders/>
+            <BordersTxt/>
+            <Backgroud>
+                <video className="video" autoPlay ref={videoRef}/>
+            </Backgroud>
+            <BordersLoading/>          
             <FaceFrame/>
         </div>
     )
       
 }
 
-function Borders({children}){
+function BordersTxt(){
     return(
-        <div>
-            <h1>LookCAMERA</h1>
-            {children}
+        <div className="txt-loading">
+            <h1>Look at the camera</h1>
         </div>
     )
 }
 
-function Backgroud(){
+function Backgroud({children}){
     return(
         <div>
-            <img src={background} className="camera-background" alt="background"></img>
+            {children}
+            <img src={background} className="camera-background" alt="background"/>
+            
         </div>
     )
 }
 function BordersLoading(){
     return(
-        <img src={borders} className="border-loading" alt="loading-borders"></img>
+        <div>
+         <img src={borders} className="border-loading" alt="loading-borders"/>
+        
+        </div>
     )
 }
 
 function FaceFrame(){
     return(
-        <img src={faceframe} className="face-frame" altr="face-frame"></img>
+        <img src={faceframe} className="face-frame" altr="face-frame"/>
     )
 }
 

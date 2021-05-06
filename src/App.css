@@ -7,9 +7,12 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.border-loading{
+    position: relative;
+    z-index: 5;
+}
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .border-loading{
     animation: App-logo-spin infinite 20s linear;
   }
 }

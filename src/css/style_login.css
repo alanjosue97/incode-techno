@@ -1,0 +1,56 @@
+.txt-loading{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 30vh;
+    
+}
+.camera-background{
+    height: 100%;
+    width: auto;
+    left: 525px;
+    height: 490px;
+    width: 459px;  
+    position: relative;
+    display:  flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.video{
+    top: 250px;
+    position: absolute;
+    left: 550px; 
+    height: 100%;
+    width: auto;
+    transform: rotateY(180deg);
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    height: 410px;
+    width: 410px;  
+    border-radius: 50%;
+    z-index: 10;
+}
+.border-loading{
+    pointer-events: none;
+    height: 100vmin;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+  }
+@media (prefers-reduced-motion: no-preference) {
+  .border-loading{
+    animation: border-spin infinite 20s linear;
+  }
+}
+@keyframes border-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
