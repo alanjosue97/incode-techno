@@ -3,7 +3,7 @@ import './css/style_home.css'
 import './App.css';
 import {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import BiometricFace from "./componets/biometric.js";
-import TablaIdentities from "./componets/tabla_identities";
+import Identities from "./componets/tabla_identities";
 
 function App(){
   return (
@@ -17,7 +17,7 @@ function App(){
             <Home/>
           </Route>
            <Route path="/componets/tabla_identities">
-            <TablaIdentities/>
+            <Identities/>
           </Route>
         </Switch>
        </Router>
