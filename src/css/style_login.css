@@ -4,8 +4,13 @@
     align-items: center;
     justify-content: center;
     min-height: 30vh;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(21, 19, 46);
     
 }
+
 .camera-background{
     height: 100%;
     width: auto;
@@ -16,6 +21,7 @@
     display:  flex;
     align-items: center;
     justify-content: center;
+    
 
 }
 .video{
@@ -35,11 +41,14 @@
     z-index: 10;
 }
 .border-loading{
+    position: relative;
     pointer-events: none;
-    height: 100vmin;
-    position: absolute;
+    height: 63vmin;
+    left: 72.9vmin;
     z-index: 10;
-    width: 100%;
+    bottom: 473px;
+  
+    background-color: none;
   }
 @media (prefers-reduced-motion: no-preference) {
   .border-loading{
@@ -54,3 +63,16 @@
       transform: rotate(360deg);
     }
   }
+
+  .face-frame{
+    
+    position: absolute;
+    pointer-events: none;
+    height: 40vmin;
+    bottom: 136px;
+    left: 93vmin;
+    z-index: 10;
+    
+  }
+
+ 
