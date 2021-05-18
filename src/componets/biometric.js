@@ -23,12 +23,12 @@ function BiometricFace(){
     }, [])
 
     return (
-        <div>               
+        <div>             
             <BordersTxt/>
             <Backgroud>
                 <video className="video" autoPlay ref={videoRef}/>
             </Backgroud>
-            <BordersLoading/>          
+            <BordersLoading/>        
             <FaceFrame/>
         </div>
     )
@@ -45,7 +45,7 @@ function BordersTxt(){
 
 function Backgroud({children}){
     return(
-        <div>
+        <div >
             {children}
             <img src={background} className="camera-background" alt="background"/>
             
@@ -55,7 +55,7 @@ function Backgroud({children}){
 function BordersLoading(){
     return(
         <div>
-         <img src={borders} className="border-loading" alt="loading-borders"/>
+         <img src={borders} className="border-loading " alt="loading-borders"/>
         
         </div>
     )
@@ -63,7 +63,7 @@ function BordersLoading(){
 
 function FaceFrame(){
     return(
-        <img src={faceframe} className="face-frame" altr="face-frame"/>
+        <img src={faceframe} className="columns is-desktop is-centered face-frame " altr="face-frame"/>
     )
 }
 

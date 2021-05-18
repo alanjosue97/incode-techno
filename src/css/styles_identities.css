@@ -13,8 +13,11 @@
     position: absolute;
     left: 1220px;
     bottom: 10px;
+    background-color: rgb(37, 37, 37);
     
 }
+
+
 .txt-identi{
     position: relative;
     

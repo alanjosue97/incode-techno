@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import {BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import '../css/styles_identities.css'
 import Home from "../App.js";
+import { findAllByDisplayValue } from "@testing-library/dom";
 
 function Identities(){
     return(
@@ -25,7 +26,7 @@ function TxtIdentities(){
     return(
         <div className="txt-identi">
             <h1 className="identities-txt is-desktop">Identities</h1>
-            <Link to="../home" className="button is-default is-light btn">Log out</Link>
+            <Link to="../home" className="button is-default is-dark is-size-6 btn ">Log out</Link>
         </div> 
         
     );
@@ -48,50 +49,75 @@ const getDataFromApi = () => new Promise((resolve => {
                 {id: 3, name: 'Alonso', phone: '435432', date: 'saturday', hour: '7pm',},
                 {id: 4, name: 'Andre', phone: '346345', date: 'thursday', hour: '2pm',},
                 {id: 5, name: 'Miguel', phone: '345345', date: 'Tuesday', hour: '9pm',},
-                {id: 6, name: 'Romel', phone: '567465', date: 'sunday', hour: '8pm',}
+                {id: 6, name: 'Romel', phone: '567465', date: 'sunday', hour: '8pm',},
+                {id: 7, name: 'Jose', phone: '234324', date: 'Tuesday', hour: '9pm',},
+                {id: 8, name: 'Jimenez', phone: '325765', date: 'sunday', hour: '8pm',}
             ]
         )
     }, 300)
 }))
 
+
+
 function TablaIdentities(){
     //this is a useState
     //  [value, funtion] value initial
     const [users, setUsers] = useState([])
-
+    const [pageNumber, setPageNumber] = useState([  ]);
+    
+    
+    
     //useEffect
     useEffect(() => {
         getDataFromApi().then((users)=> {
             setUsers(users.map(user => { return{...user, isSelected: false }})
             )
-            })
+          })
     },[setUsers]);
+
+
+    const checkAll = users.every(user => user.isSelected ===true) 
+    console.log({checkAll})
+    //condicion si todas estan selecionados
+    
 
     function checkedHandler(id){
         setUsers(users.map(user => {
             //cuando el id del user sea igual al id
             if(user.id === id){
-                console.log(!user.isSelected)
+               console.log(!user.isSelected)
                 return {...user, isSelected: !user.isSelected}
-            }
+             }
             //cuando no, regresa el user como esta
             return user;
         }))
     }
+
+    //checkbox selected all 
+    function toggleAll() {
+        setUsers(users.map(user => {
+            if(checkAll){
+                return {...user, isSelected: false}
+            }
+            return {...user, isSelected: true}
+        }))
+    } 
+        
+
+  
     return(
         <div className="columns is-desktop is-centered tb">
-            <table className="table is-desktop is-centered ">
+            <table className="table is-desktop is-centered">
                 <thead className="head ">
                     <tr key={users.id}>
-                    <th className="check"><input type="checkbox" checked={users.allSelected} onChange={() => checkedHandler(users.id)} ></input></th>
-                    <th className="name has-text-grey-lighter" title="Name">Name</th>
-                    <th className="phone has-text-grey-lighter"  title="Phone number" >Phone Number</th>
-                    <th className="date has-text-grey-lighter" title="Date">Date</th>
-                    <th className="hour has-text-grey-lighter" title="Hour">Hour</th>
+                        <th className="check"><input type="checkbox" checked={checkAll} onChange={() => toggleAll()} ></input></th>
+                        <th className="name has-text-grey-lighter" title="Name">Name</th>
+                        <th className="phone has-text-grey-lighter"  title="Phone number" >Phone Number</th>
+                        <th className="date has-text-grey-lighter" title="Date">Date</th>
+                        <th className="hour has-text-grey-lighter" title="Hour">Hour</th>
                     </tr>
                 </thead>
-            
-            <tbody>
+          <tbody>
                {users.map(user => {
                    return(
                        <tr key={user.id}>
@@ -105,8 +131,7 @@ function TablaIdentities(){
                })} 
             </tbody>
         </table>
-    
-        </div>
+    </div>
         
         
     );
