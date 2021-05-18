@@ -103,8 +103,6 @@ function TablaIdentities(){
         }))
     } 
         
-
-  
     return(
         <div className="columns is-desktop is-centered tb">
             <table className="table is-desktop is-centered">
